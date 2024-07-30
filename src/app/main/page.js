@@ -9,7 +9,6 @@ export const metadata = {
   title: "الرئيسية",
   description: "",
 };
-export const fetchCache = "default-cache";
 export default function Home() {
   return (
     <div className={styles.main}>

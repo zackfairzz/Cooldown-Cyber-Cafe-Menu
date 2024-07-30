@@ -6,15 +6,11 @@ export const metadata = {
   title: "المنيو",
   description: "",
 };
-export const fetchCache = "default-cache";
 
 const fetchProducts = async () => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}main/products/api`,
-      {
-        next: { revalidate: 7200 },
-      }
+      `${process.env.NEXT_PUBLIC_BASE_URL}main/products/api`
     );
     if (!response.ok) {
       throw new Error("Network response was not ok");
