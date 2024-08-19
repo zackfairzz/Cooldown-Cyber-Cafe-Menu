@@ -5,6 +5,8 @@ export const useGlobalStates = create((set) => ({
   arPageName: "",
   entertainmentPage: "PC",
   productPage: "",
+  lang: "",
+  setLang: (lang) => set({ lang }),
   setProductPage: (productPage) => set({ productPage }),
   setEntertainmentPage: (entertainmentPage) => set({ entertainmentPage }),
   setPage: (page) => set({ page }),

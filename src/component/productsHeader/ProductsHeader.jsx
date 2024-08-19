@@ -9,7 +9,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 function ProductsHeader() {
-  const { arPageName } = useGlobalStates();
+  const { arPageName, lang } = useGlobalStates();
   useEffect(() => {
     arPageName === "" || arPageName === undefined || arPageName === null
       ? redirect("/main")
@@ -17,9 +17,18 @@ function ProductsHeader() {
   }, [arPageName]);
   return (
     <Container>
-      <div className={styles.headline}>
-        <Link href="/main">
+      <div
+        className={styles.headline}
+        style={{ flexDirection: lang !== "ar" && "row" }}
+      >
+        <Link
+          href="/main"
+          style={
+            lang !== "ar" ? { marginLeft: "0px", marginRight: "10px" } : {}
+          }
+        >
           <Image
+            style={{ transform: lang !== "ar" && "rotate(180deg)" }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
             src={arrow}

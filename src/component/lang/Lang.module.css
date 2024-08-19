@@ -1,0 +1,19 @@
+.lang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 8px;
+}
+.lang a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  width: 50%;
+  text-align: center;
+  padding: 6px 8px;
+  font-weight: 600;
+  font-family: "Cairo", sans-serif !important;
+}

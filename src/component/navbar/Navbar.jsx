@@ -18,36 +18,62 @@ import Link from "next/link";
 import { useGlobalStates } from "@/globalState";
 
 function Navbar() {
-  const { arPageName, setArPageName, setProductPage } = useGlobalStates();
+  const { arPageName, setArPageName, setProductPage, lang } = useGlobalStates();
   return (
-    <div className={styles.nav}>
+    <div
+      className={styles.nav}
+      style={{
+        flexDirection: lang !== "ar" && "row",
+      }}
+    >
       <div
-        className={arPageName === "العصائر الطبيعية" ? styles.active : null}
+        className={
+          arPageName === "العصائر الطبيعية" || arPageName === "Drinks"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("drinks");
-          setArPageName("العصائر الطبيعية");
+          setArPageName(lang === "ar" ? "العصائر الطبيعية" : "Drinks");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
             src={drink}
             alt="coffee"
+            style={{ marginLeft: lang === "ar" && "-10px" }}
             width={23}
             height={23}
           />
-          <p style={{ marginRight: "0px" }}>العصائر الطبيعية</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "العصائر الطبيعية" : "Drinks"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "المشروبات الساخنة" ? styles.active : null}
+        className={
+          arPageName === "المشروبات الساخنة" || arPageName === "Hot Drinks"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("hotdrinks");
-          setArPageName("المشروبات الساخنة");
+          setArPageName(lang === "ar" ? "المشروبات الساخنة" : "Hot Drinks");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -56,17 +82,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>المشروبات الساخنة</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "المشروبات الساخنة" : "Hot Drinks"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "كلاسك موهيتو" ? styles.active : null}
+        className={
+          arPageName === "كلاسك موهيتو" || arPageName === "Mojito"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("mojito");
-          setArPageName("كلاسك موهيتو");
+          setArPageName(lang === "ar" ? "كلاسك موهيتو" : "Mojito");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -75,17 +112,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>كلاسك موهيتو</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "كلاسك موهيتو" : "Mojito"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "كولداون موهيتو" ? styles.active : null}
+        className={
+          arPageName === "كولداون موهيتو" || arPageName === "Cooldown Mojito"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("cooldownMojito");
-          setArPageName("كولداون موهيتو");
+          setArPageName(lang === "ar" ? "كولداون موهيتو" : "Cooldown Mojito");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -94,17 +142,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>كولداون موهيتو</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "كولداون موهيتو" : "Cooldown Mojito"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "السموذيات" ? styles.active : null}
+        className={
+          arPageName === "السموذيات" || arPageName === "Smoothies"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("smoothies");
-          setArPageName("السموذيات");
+          setArPageName(lang === "ar" ? "السموذيات" : "Smoothies");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -113,17 +172,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>السموذيات</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "السموذيات" : "Smoothies"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "المشروبات الباردة" ? styles.active : null}
+        className={
+          arPageName === "المشروبات الباردة" || arPageName === "Cold Drinks"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("icedrinks");
-          setArPageName("المشروبات الباردة");
+          setArPageName(lang === "ar" ? "المشروبات الباردة" : "Cold Drinks");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -132,17 +202,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>المشروبات الباردة</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "المشروبات الباردة" : "Cold Drinks"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "ميلك شيك" ? styles.active : null}
+        className={
+          arPageName === "ميلك شيك" || arPageName === "Milk Shake"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("milkshake");
-          setArPageName("ميلك شيك");
+          setArPageName(lang === "ar" ? "ميلك شيك" : "Milk Shake");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -151,17 +232,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>ميلك شيك</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "ميلك شيك" : "Milk Shake"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "يوكرت شيك" ? styles.active : null}
+        className={
+          arPageName === "يوكرت شيك" || arPageName === "Yogurt Shake"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("yogurtShake");
-          setArPageName("يوكرت شيك");
+          setArPageName(lang === "ar" ? "يوكرت شيك" : "Yogurt Shake");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -170,17 +262,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>يوكرت شيك</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "يوكرت شيك" : "Yogurt Shake"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "القهوة المثلجة" ? styles.active : null}
+        className={
+          arPageName === "القهوة المثلجة" || arPageName === "Ice Coffee"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("icecoffee");
-          setArPageName("القهوة المثلجة");
+          setArPageName(lang === "ar" ? "القهوة المثلجة" : "Ice Coffee");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -189,17 +292,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>القهوة المثلجة</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "القهوة المثلجة" : "Ice Coffee"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "فرابتشينو" ? styles.active : null}
+        className={
+          arPageName === "فرابتشينو" || arPageName === "Fraptchino"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("fraptchino");
-          setArPageName("فرابتشينو");
+          setArPageName(lang === "ar" ? "فرابتشينو" : "Fraptchino");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -208,17 +322,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>فرابتشينو</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "فرابتشينو" : "Fraptchino"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "المعجنات" ? styles.active : null}
+        className={
+          arPageName === "المعجنات" || arPageName === "Pastries"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("pastries");
-          setArPageName("المعجنات");
+          setArPageName(lang === "ar" ? "المعجنات" : "Pastries");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -227,17 +352,28 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>المعجنات</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "المعجنات" : "Pastries"}
+          </p>
         </div>
       </div>
       <div
-        className={arPageName === "الاراكيل" ? styles.active : null}
+        className={
+          arPageName === "الاراكيل" || arPageName === "Hookah"
+            ? styles.active
+            : null
+        }
         onClick={() => {
           setProductPage("hookah");
-          setArPageName("الاراكيل");
+          setArPageName(lang === "ar" ? "الاراكيل" : "Hookah");
         }}
       >
-        <div className={styles.item}>
+        <div
+          className={styles.item}
+          style={{
+            flexDirection: lang !== "ar" && "row",
+          }}
+        >
           <Image
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
@@ -246,7 +382,9 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p>الاراكيل</p>
+          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+            {lang === "ar" ? "الاراكيل" : "Hookah"}
+          </p>
         </div>
       </div>
     </div>

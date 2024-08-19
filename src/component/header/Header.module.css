@@ -8,7 +8,12 @@
   z-index: 999;
   border-top: 0.5px solid #ccc;
 }
-
+.offer {
+  color: #ccc !important;
+  font-size: 14px;
+  direction: rtl;
+  margin-bottom: 6px;
+}
 .content {
   padding: 16px 0;
 }
@@ -28,15 +33,13 @@
 .content ul li img {
   transform: scale(1.4);
   margin-left: 4px;
+  margin-right: 4px;
 }
 .content ul a {
   text-decoration: none;
   color: #fff;
 }
 
-/* .content ul li {
-  font-size: 20px !important;
-} */
 .content ul li p {
   font-size: 20px !important;
   margin-right: 6px;

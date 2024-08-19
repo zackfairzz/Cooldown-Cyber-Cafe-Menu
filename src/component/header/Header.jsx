@@ -11,22 +11,25 @@ import Link from "next/link";
 import { useGlobalStates } from "@/globalState";
 
 function Header() {
-  const { page, setPage, setArPageName, setEntertainmentPage } =
+  const { page, setPage, setArPageName, setEntertainmentPage, lang } =
     useGlobalStates();
   useEffect(() => {}, [page]);
   return (
     <div className={styles.header}>
       <Container>
         <div className={styles.content}>
-          <ul>
+          <ul style={{ flexDirection: lang !== "ar" && "row" }}>
             <Link
               href="/main"
               onClick={() => {
                 setPage("main");
               }}
             >
-              <li className={page === "main" ? styles.active : null}>
-                <p>المنيو</p>
+              <li
+                className={page === "main" ? styles.active : null}
+                style={{ flexDirection: lang !== "ar" && "row-reverse" }}
+              >
+                <p>{lang === "ar" ? "المنيو" : "Menu"}</p>
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
@@ -41,12 +44,15 @@ function Header() {
               href="/main/entertainment"
               onClick={() => {
                 setPage("entertainment");
-                setArPageName("PC's");
+                setArPageName(lang === "ar" ? "كمبيوتر" : "PC");
                 setEntertainmentPage("PC");
               }}
             >
-              <li className={page === "entertainment" ? styles.active : null}>
-                <p>ترفية</p>
+              <li
+                className={page === "entertainment" ? styles.active : null}
+                style={{ flexDirection: lang !== "ar" && "row-reverse" }}
+              >
+                <p>{lang === "ar" ? "الترفيه" : "Fun Zone"}</p>
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
@@ -64,8 +70,11 @@ function Header() {
                 setPage("aboutus");
               }}
             >
-              <li className={page === "aboutus" ? styles.active : null}>
-                <p>من نحن</p>
+              <li
+                className={page === "aboutus" ? styles.active : null}
+                style={{ flexDirection: lang !== "ar" && "row-reverse" }}
+              >
+                <p>{lang === "ar" ? "من نحن" : "About Us"}</p>
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
@@ -83,8 +92,11 @@ function Header() {
                 setPage("rating");
               }}
             >
-              <li className={page === "rating" ? styles.active : null}>
-                <p>التقيم</p>
+              <li
+                className={page === "rating" ? styles.active : null}
+                style={{ flexDirection: lang !== "ar" && "row-reverse" }}
+              >
+                <p>{lang === "ar" ? "التقييم" : "Rating"}</p>
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority

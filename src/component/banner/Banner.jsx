@@ -3,6 +3,7 @@ import Container from "../container/Container";
 import styles from "./Banner.module.css";
 import { Carousel } from "antd";
 import Image from "next/image";
+import BannerHeader from "../header/BannerHeader";
 
 const fetchOffers = async () => {
   try {
@@ -25,7 +26,7 @@ const Banner = async () => {
 
   return (
     <Container>
-      <p className={styles.offer}>العروض:</p>
+      <BannerHeader />
       <Carousel autoplay className={styles.carousel}>
         {offers.map((offer) => (
           <div className={styles.banner} key={offer.id}>

@@ -19,17 +19,22 @@ import Link from "next/link";
 import { useGlobalStates } from "@/globalState";
 
 function Categories() {
-  const { setArPageName, setProductPage } = useGlobalStates();
+  const { setArPageName, setProductPage, lang } = useGlobalStates();
   return (
     <Container>
       <div className={styles.main}>
-        <p className={styles.menu}>المنيو:</p>
+        <p
+          className={styles.menu}
+          style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
+        >
+          {lang === "ar" ? "المنيو" : "Menu"}:
+        </p>
         <div className={styles.grid}>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("drinks");
-              setArPageName("العصائر الطبيعية");
+              setArPageName(lang === "ar" ? "العصائر الطبيعية" : "Drinks");
             }}
           >
             <div className={styles.item}>
@@ -43,14 +48,14 @@ function Categories() {
                   priority
                 />
               </span>
-              <p>العصائر الطبيعية</p>
+              <p>{lang === "ar" ? "العصائر الطبيعية" : "Drinks"}</p>
             </div>
           </Link>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("hotdrinks");
-              setArPageName("المشروبات الساخنة");
+              setArPageName(lang === "ar" ? "المشروبات الساخنة" : "Hot Drinks");
             }}
           >
             <div className={styles.item}>
@@ -64,7 +69,7 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>المشروبات الساخنة</p>
+              <p>{lang === "ar" ? "المشروبات الساخنة" : "Hot Drinks"}</p>
             </div>
           </Link>
 
@@ -72,7 +77,7 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("mojito");
-              setArPageName("كلاسك موهيتو");
+              setArPageName(lang === "ar" ? "كلاسك موهيتو" : "Mojito");
             }}
           >
             <div className={styles.item}>
@@ -86,14 +91,16 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>كلاسك موهيتو</p>
+              <p>{lang === "ar" ? "كلاسك موهيتو" : "Mojito"}</p>
             </div>
           </Link>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("cooldownMojito");
-              setArPageName("كولداون موهيتو");
+              setArPageName(
+                lang === "ar" ? "كولداون موهيتو" : "Cooldown Mojito"
+              );
             }}
           >
             <div className={styles.item}>
@@ -107,14 +114,14 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>كولداون موهيتو</p>
+              <p>{lang === "ar" ? "كولداون موهيتو" : "Cooldown Mojito"}</p>
             </div>
           </Link>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("smoothies");
-              setArPageName("السموذيات");
+              setArPageName(lang === "ar" ? "السموذيات" : "Smoothies");
             }}
           >
             <div className={styles.item}>
@@ -128,7 +135,7 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>السموذيات</p>
+              <p>{lang === "ar" ? "السموذيات" : "Smoothies"}</p>
             </div>
           </Link>
 
@@ -136,7 +143,9 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("icedrinks");
-              setArPageName("المشروبات الباردة");
+              setArPageName(
+                lang === "ar" ? "المشروبات الباردة" : "Cold Drinks"
+              );
             }}
           >
             <div className={styles.item}>
@@ -150,7 +159,7 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>المشروبات الباردة</p>
+              <p>{lang === "ar" ? "المشروبات الباردة" : "Cold Drinks"}</p>
             </div>
           </Link>
 
@@ -158,7 +167,7 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("milkshake");
-              setArPageName("ميلك شيك");
+              setArPageName(lang === "ar" ? "ميلك شيك" : "Milk Shake");
             }}
           >
             <div className={styles.item}>
@@ -172,14 +181,14 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>ميلك شيك</p>
+              <p>{lang === "ar" ? "ميلك شيك" : "Milk Shake"}</p>
             </div>
           </Link>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("yogurtShake");
-              setArPageName("يوكرت شيك");
+              setArPageName(lang === "ar" ? "يوكرت شيك" : "Yogurt Shake");
             }}
           >
             <div className={styles.item}>
@@ -193,7 +202,7 @@ function Categories() {
                   height={40}
                 />
               </span>
-              <p>يوكرت شيك</p>
+              <p>{lang === "ar" ? "يوكرت شيك" : "Yogurt Shake"}</p>
             </div>
           </Link>
 
@@ -201,7 +210,7 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("icecoffee");
-              setArPageName("القهوة المثلجة");
+              setArPageName(lang === "ar" ? "القهوة المثلجة" : "Ice Coffee");
             }}
           >
             <div className={styles.item}>
@@ -215,7 +224,7 @@ function Categories() {
                   height={40}
                 />
               </span>
-              <p>القهوة المثلجة</p>
+              <p>{lang === "ar" ? "القهوة المثلجة" : "Ice Coffee"}</p>
             </div>
           </Link>
 
@@ -223,7 +232,7 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("fraptchino");
-              setArPageName("فرابتشينو");
+              setArPageName(lang === "ar" ? "فرابتشينو" : "Fraptchino");
             }}
           >
             <div className={styles.item}>
@@ -237,7 +246,7 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>فرابتشينو</p>
+              <p>{lang === "ar" ? "فرابتشينو" : "Fraptchino"}</p>
             </div>
           </Link>
 
@@ -245,7 +254,7 @@ function Categories() {
             href={`/main/products`}
             onClick={() => {
               setProductPage("pastries");
-              setArPageName("المعجنات");
+              setArPageName(lang === "ar" ? "المعجنات" : "Pastries");
             }}
           >
             <div className={styles.item}>
@@ -259,14 +268,14 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>المعجنات</p>
+              <p>{lang === "ar" ? "المعجنات" : "Pastries"}</p>
             </div>
           </Link>
           <Link
             href={`/main/products`}
             onClick={() => {
               setProductPage("hookah");
-              setArPageName("الاراكيل");
+              setArPageName(lang === "ar" ? "الاراكيل" : "Hookah");
             }}
           >
             <div className={styles.item}>
@@ -280,7 +289,7 @@ function Categories() {
                   height={45}
                 />
               </span>
-              <p>الاراكيل</p>
+              <p>{lang === "ar" ? "الاراكيل" : "Hookah"}</p>
             </div>
           </Link>
         </div>

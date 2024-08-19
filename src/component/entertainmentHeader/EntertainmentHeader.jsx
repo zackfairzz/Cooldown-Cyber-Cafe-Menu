@@ -6,16 +6,24 @@ import Container from "../container/Container";
 import { useGlobalStates } from "@/globalState";
 
 export default function EntertainmentHeader() {
-  const { arPageName, setArPageName, setEntertainmentPage } = useGlobalStates();
+  const { arPageName, setArPageName, setEntertainmentPage, lang } =
+    useGlobalStates();
   useEffect(() => {
     if (arPageName === "" || arPageName === undefined || arPageName === null) {
-      setArPageName("PC's");
+      setArPageName(lang === "ar" ? "حاسبات" : "PC");
       setEntertainmentPage("PC");
     }
   }, [arPageName]);
   return (
     <Container>
-      <div className={styles.logo}>
+      <div
+        className={styles.logo}
+        style={
+          lang !== "ar"
+            ? { direction: "ltr", marginRight: "0px", marginLeft: "-28px" }
+            : {}
+        }
+      >
         <Image
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority

@@ -6,6 +6,7 @@ import Container from "../container/Container";
 import { Rate, Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import axios from "axios";
+import { useGlobalStates } from "@/globalState";
 
 const RatingForm = () => {
   const [name, setName] = useState("");
@@ -18,6 +19,7 @@ const RatingForm = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const { lang } = useGlobalStates();
   const sendEmail = async () => {
     setLoading(true);
     setError(false);
@@ -73,7 +75,14 @@ const RatingForm = () => {
     <>
       {loading ? (
         <Container>
-          <div className={styles.logo}>
+          <div
+            className={styles.logo}
+            style={
+              lang !== "ar"
+                ? { direction: "ltr", marginRight: "0px", marginLeft: "-28px" }
+                : {}
+            }
+          >
             <Image
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority
@@ -85,7 +94,9 @@ const RatingForm = () => {
             <p>
               <span>COOLDOWN</span>
               <br />
-              اخبرنا عن تجربتك
+              {lang === "ar"
+                ? "اخبرنا عن تجربتك"
+                : "Tell us about your experience"}
             </p>
           </div>
           <div className="loading">
@@ -99,7 +110,18 @@ const RatingForm = () => {
       ) : (
         <div className={`${styles.main}`}>
           <Container>
-            <div className={styles.logo}>
+            <div
+              className={styles.logo}
+              style={
+                lang !== "ar"
+                  ? {
+                      direction: "ltr",
+                      marginRight: "0px",
+                      marginLeft: "-28px",
+                    }
+                  : {}
+              }
+            >
               <Image
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
@@ -111,7 +133,9 @@ const RatingForm = () => {
               <p>
                 <span>COOLDOWN</span>
                 <br />
-                اخبرنا عن تجربتك
+                {lang === "ar"
+                  ? "اخبرنا عن تجربتك"
+                  : "Tell us about your experience"}
               </p>
             </div>
             {error ? (
@@ -127,50 +151,50 @@ const RatingForm = () => {
                 <p>!.. لقد حدث خطأ ما </p>
               </div>
             ) : (
-              <div className={styles.form}>
+              <div className={lang === "ar" ? styles.form : styles.eForm}>
                 <input
                   type="text"
-                  placeholder="الاسم"
+                  placeholder={lang === "ar" ? "الاسم" : "Name"}
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
                 <input
                   type="email"
-                  placeholder="البريد الالكتروني"
+                  placeholder={lang === "ar" ? "البريد الالكتروني" : "Email"}
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <p>بشكل عام</p>
+                <p>{lang === "ar" ? "التقييم" : "Rating"}</p>
                 <Rate
                   value={overallRating}
                   required
                   className={styles.rate}
                   onChange={setOverallRating}
                 />
-                <p>الخدمة</p>
+                <p>{lang === "ar" ? "الخدمة" : "Service"}</p>
                 <Rate
                   value={serviceRating}
                   required
                   className={styles.rate}
                   onChange={setServiceRating}
                 />
-                <p>الجودة</p>
+                <p>{lang === "ar" ? "الجودة" : "Quality"}</p>
                 <Rate
                   value={qualityRating}
                   required
                   className={styles.rate}
                   onChange={setQualityRating}
                 />
-                <p>الاسعار</p>
+                <p>{lang === "ar" ? "السعر" : "Prices"}</p>
                 <Rate
                   value={priceRating}
                   required
                   className={styles.rate}
                   onChange={setPriceRating}
                 />
-                <p>الموسيقى</p>
+                <p>{lang === "ar" ? "الموسيقى" : "Music"}</p>
                 <Rate
                   value={musicRating}
                   required
@@ -178,15 +202,23 @@ const RatingForm = () => {
                   onChange={setMusicRating}
                 />
                 <textarea
-                  placeholder="اخبرنا بالمزيد(اختياري)"
+                  placeholder={
+                    lang === "ar"
+                      ? "الملاحظات الاخرى (اختياري)"
+                      : "Other comments (optional)"
+                  }
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
                 <button
-                  style={stateCheck() ? null : { backgroundColor: "#a347dc69" }}
+                  style={
+                    stateCheck()
+                      ? { marginBottom: "20px" }
+                      : { backgroundColor: "#a347dc69", marginBottom: "28px" }
+                  }
                   onClick={stateCheck() ? () => sendEmail() : null}
                 >
-                  إرسال
+                  {lang === "ar" ? "ارسال" : "Submit"}{" "}
                 </button>
               </div>
             )}

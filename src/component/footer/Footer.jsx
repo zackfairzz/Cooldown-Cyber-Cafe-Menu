@@ -6,8 +6,12 @@ function Footer({ Style }) {
   return (
     <Container>
       <div style={Style} className={styles.footer}>
-        <div className={styles.head2}>Dhulfiqar Ali</div>
-        <div className={styles.head3}>964 780 024 5005</div>
+        <div className={styles.head2}>developed by</div>
+        <div className={styles.head3}>
+          <a href="https://api.whatsapp.com/send?phone=9647800245005">
+            Dhulfiqar Ali
+          </a>
+        </div>
       </div>
     </Container>
   );

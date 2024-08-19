@@ -1,4 +1,5 @@
 .footer {
+  transform: scale(0.8);
   padding-bottom: 80px;
   color: #fff;
   display: flex;
@@ -7,11 +8,18 @@
   flex-direction: column;
 }
 .footer .head2 {
-  font-size: 15.8px;
+  font-size: 13px;
   color: #ccc;
 }
 .footer .head3 {
-  font-size: 10.4px;
+  font-size: 14px;
   margin-top: -10px;
+  color: #ccc;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3px;
+}
+.footer a {
+  text-decoration: none;
   color: #ccc;
 }

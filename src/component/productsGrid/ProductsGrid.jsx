@@ -4,9 +4,10 @@ import styles from "./ProductsGrid.module.css";
 import Container from "../container/Container";
 import Image from "next/image";
 import { useGlobalStates } from "@/globalState";
+const formatter = new Intl.NumberFormat("en-US");
 
 const ProductsGrid = ({ items = [], entertainment = [] }) => {
-  const { productPage, entertainmentPage } = useGlobalStates();
+  const { productPage, entertainmentPage, lang } = useGlobalStates();
   const [products, setProducts] = useState([]);
 
   const updateProducts = useCallback(() => {
@@ -40,9 +41,16 @@ const ProductsGrid = ({ items = [], entertainment = [] }) => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className={styles.content}>
-              <p className={styles.name}>{product.name}</p>
-              <p className={styles.price}>{product.price} IQD</p>
+            <div
+              className={styles.content}
+              style={{ flexDirection: lang !== "ar" && "row" }}
+            >
+              <p className={styles.name}>
+                {lang === "ar" ? product.name : product.ename}
+              </p>
+              <p className={styles.price}>
+                {formatter.format(product.price)} IQD
+              </p>
             </div>
           </div>
         ))}

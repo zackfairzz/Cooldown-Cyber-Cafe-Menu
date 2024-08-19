@@ -1,0 +1,39 @@
+.logo {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  direction: rtl;
+  margin-right: -28px;
+}
+.eLogo {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 25px;
+  direction: ltr;
+  margin-left: -28px;
+}
+.logo p span,
+.eLogo p span {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 440px) {
+  .logo {
+    font-size: 16px;
+  }
+  .eLogo {
+    font-size: 16px;
+  }
+  .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  .eLogo img {
+    width: 70px;
+    height: 70px;
+  }
+}

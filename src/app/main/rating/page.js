@@ -4,11 +4,11 @@ import styles from "./page.module.css";
 import PageNameRedetection from "@/component/PageNameRedetection";
 
 export const metadata = {
-  title: "التقييم",
+  title: "التقيم",
   description: "",
 };
 
-export default function ContactUs() {
+function ContactUs() {
   return (
     <div className={styles.main}>
       <PageNameRedetection />
@@ -16,3 +16,4 @@ export default function ContactUs() {
     </div>
   );
 }
+export default ContactUs;
