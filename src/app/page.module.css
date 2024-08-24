@@ -1,12 +1,16 @@
 .main {
+  position: relative;
   background-color: #151528;
   color: #fff;
   margin: 0%;
-  min-height: 99vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.bg{
+  object-fit: cover;
 }
 .main .logoBox {
   display: flex;

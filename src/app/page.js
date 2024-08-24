@@ -1,7 +1,6 @@
 import Container from "@/component/container/Container";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import Lang from "@/component/lang/Lang";
 import "./globals.css";
 
@@ -12,14 +11,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div
-      className={`${styles.main} bg-color`}
-      style={{
-        backgroundImage: `url('/background3.jpeg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
+    <div className={`${styles.main} bg-color`}>
+      <Image src="/background3.jpeg" alt="bg" fill className={styles.bg} />
       <div className={styles.content}>
         <Container>
           <div className={styles.logoBox}>
