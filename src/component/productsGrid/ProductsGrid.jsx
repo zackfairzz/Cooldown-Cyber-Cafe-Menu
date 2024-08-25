@@ -45,7 +45,10 @@ const ProductsGrid = ({ items = [], entertainment = [] }) => {
               className={styles.content}
               style={{ flexDirection: lang !== "ar" && "row" }}
             >
-              <p className={styles.name}>
+              <p
+                className={styles.name}
+                style={{ direction: lang === "ar" ? "rtl" : "ltr" }}
+              >
                 {lang === "ar" ? product.name : product.ename}
               </p>
               <p className={styles.price}>
