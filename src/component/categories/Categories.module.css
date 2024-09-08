@@ -3,7 +3,7 @@
   grid-auto-columns: max-content;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom:8px;
 }
 .grid a {
   text-decoration: none;
