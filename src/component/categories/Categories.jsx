@@ -36,6 +36,27 @@ function Categories() {
           <Link
             href={`/main/products`}
             onClick={() => {
+              setProductPage("mojito");
+              setArPageName(lang === "ar" ? "موهيتو" : "Mojito");
+            }}
+          >
+            <div className={styles.item}>
+              <span>
+                <Image
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority
+                  src={mojito}
+                  alt="coffee"
+                  width={45}
+                  height={45}
+                />
+              </span>
+              <p>{lang === "ar" ? "موهيتو" : "Mojito"}</p>
+            </div>
+          </Link>
+          <Link
+            href={`/main/products`}
+            onClick={() => {
               setProductPage("drinks");
               setArPageName(lang === "ar" ? "العصائر الطبيعية" : "Drinks");
             }}
@@ -57,8 +78,8 @@ function Categories() {
           <Link
             href={`/main/products`}
             onClick={() => {
-              setProductPage("hotdrinks");
-              setArPageName(lang === "ar" ? "هوت درنك" : "Hot Drinks");
+              setProductPage("coffee milk");
+              setArPageName(lang === "ar" ? "كوفي ميلك" : "Coffee Milk");
             }}
           >
             <div className={styles.item}>
@@ -66,22 +87,20 @@ function Categories() {
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
-                  src={FiCoffee}
-                  alt="coffee"
-                  width={50}
-                  height={50}
-                  style={{ marginBottom: "-6px" }}
+                  src={coffee_milk}
+                  alt="cro"
+                  width={40}
+                  height={40}
                 />
               </span>
-              <p>{lang === "ar" ? "هوت درنك" : "Hot Drinks"}</p>
+              <p>{lang === "ar" ? "كوفي ميلك" : "Coffee Milk"}</p>
             </div>
           </Link>
-
           <Link
             href={`/main/products`}
             onClick={() => {
-              setProductPage("mojito");
-              setArPageName(lang === "ar" ? "موهيتو" : "Mojito");
+              setProductPage("milkshake");
+              setArPageName(lang === "ar" ? "ميلكي" : "Milky");
             }}
           >
             <div className={styles.item}>
@@ -89,13 +108,15 @@ function Categories() {
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
-                  src={mojito}
+                  src={milkshake}
                   alt="coffee"
                   width={45}
                   height={45}
                 />
               </span>
-              <p>{lang === "ar" ? "موهيتو" : "Mojito"}</p>
+              <p style={{ marginTop: "10px" }}>
+                {lang === "ar" ? "ميلكي" : "Milky"}
+              </p>
             </div>
           </Link>
           <Link
@@ -123,8 +144,8 @@ function Categories() {
           <Link
             href={`/main/products`}
             onClick={() => {
-              setProductPage("milkshake");
-              setArPageName(lang === "ar" ? "ميلكي" : "Milky");
+              setProductPage("hotdrinks");
+              setArPageName(lang === "ar" ? "هوت درنك" : "Hot Drinks");
             }}
           >
             <div className={styles.item}>
@@ -132,18 +153,16 @@ function Categories() {
                 <Image
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
-                  src={milkshake}
+                  src={FiCoffee}
                   alt="coffee"
-                  width={45}
-                  height={45}
+                  width={50}
+                  height={50}
+                  style={{ marginBottom: "-6px" }}
                 />
               </span>
-              <p style={{ marginTop: "10px" }}>
-                {lang === "ar" ? "ميلكي" : "Milky"}
-              </p>
+              <p>{lang === "ar" ? "هوت درنك" : "Hot Drinks"}</p>
             </div>
           </Link>
-
           <Link
             href={`/main/products`}
             onClick={() => {
@@ -167,27 +186,6 @@ function Categories() {
             </div>
           </Link>
 
-          <Link
-            href={`/main/products`}
-            onClick={() => {
-              setProductPage("coffee milk");
-              setArPageName(lang === "ar" ? "كوفي ميلك" : "Coffee Milk");
-            }}
-          >
-            <div className={styles.item}>
-              <span>
-                <Image
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority
-                  src={coffee_milk}
-                  alt="cro"
-                  width={40}
-                  height={40}
-                />
-              </span>
-              <p>{lang === "ar" ? "كوفي ميلك" : "Coffee Milk"}</p>
-            </div>
-          </Link>
           <Link
             href={`/main/products`}
             onClick={() => {

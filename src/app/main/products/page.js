@@ -23,7 +23,8 @@ const fetchProducts = async () => {
   }
 };
 const Products = async () => {
-  const items = await fetchProducts();
+  let items = await fetchProducts();
+  items = items.sort((a, b) => a.id - b.id);
   return (
     <div>
       <ProductsHeader />
