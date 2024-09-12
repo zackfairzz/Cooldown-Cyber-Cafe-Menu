@@ -27,6 +27,78 @@ export default function EntertainmentNavbar() {
         style={{ flexDirection: lang !== "ar" && "row" }}
       >
         <div
+          className={entertainmentPage === "Cinema" ? styles.active : null}
+          onClick={() => {
+            setEntertainmentPage("Cinema");
+            setArPageName(lang === "ar" ? "سينما" : "Cinema");
+          }}
+        >
+          <div
+            className={styles.item}
+            style={{ flexDirection: lang !== "ar" && "row" }}
+          >
+            <Image
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+              src={cinema}
+              alt="coffee"
+              width={23}
+              height={23}
+            />
+            <p style={{ marginRight: "12px" }}>
+              {lang === "ar" ? "سينما" : "Cinema"}
+            </p>
+          </div>
+        </div>
+        <div
+          className={entertainmentPage === "PS5" ? styles.active : null}
+          onClick={() => {
+            setEntertainmentPage("PS5");
+            setArPageName(lang === "ar" ? "بلي ستيشن 5" : "Playstation 5");
+          }}
+        >
+          <div
+            className={styles.item}
+            style={{ flexDirection: lang !== "ar" && "row" }}
+          >
+            <Image
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+              src={ps5}
+              alt="coffee"
+              width={23}
+              height={23}
+            />
+            <p style={{ marginRight: "8px" }}>
+              {lang === "ar" ? "بلي ستيشن 5" : "Playstation 5"}
+            </p>
+          </div>
+        </div>
+        <div
+          className={entertainmentPage === "Billiard" ? styles.active : null}
+          onClick={() => {
+            setEntertainmentPage("Billiard");
+            setArPageName(lang === "ar" ? "بليارد" : "Billiard");
+          }}
+        >
+          <div
+            className={styles.item}
+            style={{ flexDirection: lang !== "ar" && "row" }}
+          >
+            <Image
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              priority
+              src={Billiard}
+              alt="coffee"
+              width={23}
+              height={23}
+            />
+            <p style={{ marginRight: "12px" }}>
+              {lang === "ar" ? "بليارد" : "Billiard"}
+            </p>
+          </div>
+        </div>
+        <div
           className={entertainmentPage === "PC" ? styles.active : null}
           onClick={() => {
             setEntertainmentPage("PC");
@@ -98,78 +170,7 @@ export default function EntertainmentNavbar() {
             </p>
           </div>
         </div>
-        <div
-          className={entertainmentPage === "PS5" ? styles.active : null}
-          onClick={() => {
-            setEntertainmentPage("PS5");
-            setArPageName(lang === "ar" ? "بلي ستيشن 5" : "Playstation 5");
-          }}
-        >
-          <div
-            className={styles.item}
-            style={{ flexDirection: lang !== "ar" && "row" }}
-          >
-            <Image
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority
-              src={ps5}
-              alt="coffee"
-              width={23}
-              height={23}
-            />
-            <p style={{ marginRight: "8px" }}>
-              {lang === "ar" ? "بلي ستيشن 5" : "Playstation 5"}
-            </p>
-          </div>
-        </div>
-        <div
-          className={entertainmentPage === "Cinema" ? styles.active : null}
-          onClick={() => {
-            setEntertainmentPage("Cinema");
-            setArPageName(lang === "ar" ? "سينما" : "Cinema");
-          }}
-        >
-          <div
-            className={styles.item}
-            style={{ flexDirection: lang !== "ar" && "row" }}
-          >
-            <Image
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority
-              src={cinema}
-              alt="coffee"
-              width={23}
-              height={23}
-            />
-            <p style={{ marginRight: "12px" }}>
-              {lang === "ar" ? "سينما" : "Cinema"}
-            </p>
-          </div>
-        </div>
-        <div
-          className={entertainmentPage === "Billiard" ? styles.active : null}
-          onClick={() => {
-            setEntertainmentPage("Billiard");
-            setArPageName(lang === "ar" ? "بليارد" : "Billiard");
-          }}
-        >
-          <div
-            className={styles.item}
-            style={{ flexDirection: lang !== "ar" && "row" }}
-          >
-            <Image
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority
-              src={Billiard}
-              alt="coffee"
-              width={23}
-              height={23}
-            />
-            <p style={{ marginRight: "12px" }}>
-              {lang === "ar" ? "بليارد" : "Billiard"}
-            </p>
-          </div>
-        </div>
+
         <div
           className={entertainmentPage === "VR" ? styles.active : null}
           onClick={() => {
@@ -198,4 +199,3 @@ export default function EntertainmentNavbar() {
     </Container>
   );
 }
- 

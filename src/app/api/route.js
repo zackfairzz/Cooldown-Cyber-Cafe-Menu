@@ -7,6 +7,9 @@ export async function GET() {
     where: {
       category: "offer",
     },
+    orderBy: {
+      id: "asc",
+    },
   });
 
   const headers = new Headers({
