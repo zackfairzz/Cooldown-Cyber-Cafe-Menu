@@ -44,8 +44,8 @@ function Header() {
               href="/main/entertainment"
               onClick={() => {
                 setPage("entertainment");
-                setArPageName(lang === "ar" ? "كمبيوتر" : "PC");
-                setEntertainmentPage("PC");
+                setArPageName(lang === "ar" ? "سينما" : "Cinema");
+                setEntertainmentPage("Cinema");
               }}
             >
               <li

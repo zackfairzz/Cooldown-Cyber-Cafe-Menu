@@ -19,6 +19,8 @@
 
 .img1 {
   margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 20px;
   position: relative;
   width: 100%;
@@ -26,6 +28,8 @@
 }
 .img2 {
   margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
   margin-bottom: 20px;
   position: relative;
   width: 100%;
@@ -51,7 +55,6 @@
   margin-bottom: 20px;
   margin: 30px auto;
 }
-
 
 @media only screen and (max-width: 440px) {
   .logo {
