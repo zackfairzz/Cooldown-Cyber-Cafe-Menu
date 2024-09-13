@@ -11,16 +11,17 @@ import { useGlobalStates } from "@/globalState";
 const RatingForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [overallRating, setOverallRating] = useState(0);
-  const [serviceRating, setServiceRating] = useState(0);
-  const [qualityRating, setQualityRating] = useState(0);
-  const [priceRating, setPriceRating] = useState(0);
-  const [musicRating, setMusicRating] = useState(0);
+  const [overallRating, setOverallRating] = useState(3);
+  const [serviceRating, setServiceRating] = useState(3);
+  const [qualityRating, setQualityRating] = useState(3);
+  const [priceRating, setPriceRating] = useState(3);
+  const [musicRating, setMusicRating] = useState(3);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const { lang } = useGlobalStates();
   const sendEmail = async () => {
+    event.preventDefault();
     setLoading(true);
     setError(false);
 
@@ -151,7 +152,10 @@ const RatingForm = () => {
                 <p>!.. لقد حدث خطأ ما </p>
               </div>
             ) : (
-              <div className={lang === "ar" ? styles.form : styles.eForm}>
+              <form
+                onSubmit={sendEmail}
+                className={lang === "ar" ? styles.form : styles.eForm}
+              >
                 <input
                   type="text"
                   placeholder={lang === "ar" ? "الاسم" : "Name"}
@@ -211,16 +215,12 @@ const RatingForm = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 />
                 <button
-                  style={
-                    stateCheck()
-                      ? { marginBottom: "20px" }
-                      : { backgroundColor: "#a347dc69", marginBottom: "28px" }
-                  }
-                  onClick={stateCheck() ? () => sendEmail() : null}
+                  type="submit"
+                  style={{ marginBottom: "20px", marginBottom: "28px" }}
                 >
-                  {lang === "ar" ? "ارسال" : "Submit"}{" "}
+                  {lang === "ar" ? "ارسال" : "Submit"}
                 </button>
-              </div>
+              </form>
             )}
           </Container>
         </div>

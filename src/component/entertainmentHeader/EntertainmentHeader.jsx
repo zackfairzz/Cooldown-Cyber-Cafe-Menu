@@ -10,8 +10,8 @@ export default function EntertainmentHeader() {
     useGlobalStates();
   useEffect(() => {
     if (arPageName === "" || arPageName === undefined || arPageName === null) {
-      setArPageName(lang === "ar" ? "حاسبات" : "PC");
-      setEntertainmentPage("PC");
+      setArPageName(lang === "ar" ? "سينما" : "Cinema");
+      setEntertainmentPage("Cinema");
     }
   }, [arPageName]);
   return (

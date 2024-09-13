@@ -1,5 +1,4 @@
 import Header from "@/component/header/Header.jsx";
-import "../globals.css";
 import Footer from "@/component/footer/Footer.jsx";
 import LangChecker from "@/component/LangChecker";
 

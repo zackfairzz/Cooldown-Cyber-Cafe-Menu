@@ -5,7 +5,7 @@
   gap: 15px;
   margin-top: 8px;
 }
-.lang a {
+.lang div {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
@@ -15,5 +15,5 @@
   text-align: center;
   padding: 6px 8px;
   font-weight: 600;
-  font-family: "Cairo", sans-serif !important;
+  user-select: none !important;
 }

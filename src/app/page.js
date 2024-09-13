@@ -1,13 +1,9 @@
+"use client";
 import Container from "@/component/container/Container";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Lang from "@/component/lang/Lang";
-import "./globals.css";
-
-export const metadata = {
-  title: "الرئيسية",
-  description: "",
-};
+import Head from "next/head";
 
 export default function Home() {
   return (
