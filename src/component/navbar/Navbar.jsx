@@ -458,7 +458,7 @@ function Navbar() {
             height={19}
           />
           <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
-            {lang === "ar" ? "البيكري" : ""}
+            {lang === "ar" ? "البيكري" : "Bakery"}
           </p>
         </div>
       </div>

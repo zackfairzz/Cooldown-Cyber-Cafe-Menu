@@ -2,10 +2,11 @@
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  overflow-y: scroll;
-  margin-block: 12px;
-  padding-inline-start: 14px;
+  overflow-x: scroll;
+  padding: 12px;
   gap: 8px;
+  scrollbar-width: none;
+  height: 64px;
 }
 .nav::-webkit-scrollbar {
   display: none;
@@ -17,7 +18,7 @@
 }
 .item {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
   padding: 12px;
