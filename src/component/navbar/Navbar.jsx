@@ -457,7 +457,8 @@ function Navbar() {
             width={19}
             height={19}
           />
-          <p style={{ paddingLeft: "4px", paddingRight: "4px" }}>
+
+          <p style={{ paddingLeft: "4px", paddingRight: "5px" }}>
             {lang === "ar" ? "البيكري" : "Bakery"}
           </p>
         </div>
